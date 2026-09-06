@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discharge-Readiness Bed-Turnover Coordination Board</title>
+  <link rel="stylesheet" href="/static/css/style.css">
+  <meta name="description" content="Hospital discharge-readiness and bed-turnover coordination board for inter-facility patient transfers.">
+</head>
+<body>
+
+  <!-- Skip navigation link for accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Top Navigation -->
+  <header role="banner">
+    <nav class="topnav" role="navigation" aria-label="Main navigation">
+      <h1>🏥 Discharge &amp; Bed Turnover Board</h1>
+
+      <div class="nav-links" role="tablist" aria-label="Views">
+        <button data-view="dashboard" class="active"
+                role="tab" aria-selected="true" aria-controls="main-content">
+          📊 Dashboard
+        </button>
+        <button data-view="board"
+                role="tab" aria-selected="false" aria-controls="main-content">
+          🗂️ Turnover Board
+        </button>
+        <button data-view="actions"
+                role="tab" aria-selected="false" aria-controls="main-content">
+          📋 Actions
+        </button>
+        <button data-view="errors"
+                role="tab" aria-selected="false" aria-controls="main-content">
+          🔍 Error Analysis
+        </button>
+        <button data-view="stakeholder"
+                role="tab" aria-selected="false" aria-controls="main-content">
+          👥 Stakeholder
+        </button>
+      </div>
+
+      <div class="role-selector">
+        <label for="role-select">View as:</label>
+        <select id="role-select" aria-label="Select your role">
+          <option value="coordinator">🗂️ Bed Coordinator</option>
+          <option value="clinical">🩺 Doctor / Clinical</option>
+          <option value="nurse">👩‍⚕️ Nurse / Ward Staff</option>
+          <option value="housekeeping">🧹 Housekeeping</option>
+          <option value="transfer">🚑 Transfer Coordinator</option>
+          <option value="admin">📊 Administrator</option>
+        </select>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main content area -->
+  <main id="main-content" role="main" tabindex="-1" aria-live="polite" aria-label="Main content">
+    <div class="loading-spinner" aria-live="polite" aria-label="Loading dashboard">
+      <p style="font-size:24px">⏳ Loading...</p>
+      <p style="font-size:16px;margin-top:8px;color:#475569">
+        Preparing the Discharge &amp; Bed Turnover Coordination Board
+      </p>
+    </div>
+  </main>
+
+  <!-- Accessible error region -->
+  <div id="error-region" role="alert" aria-live="assertive" style="display:none"></div>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
