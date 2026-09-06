@@ -7,8 +7,8 @@ import json
 import os
 from datetime import datetime
 from flask import Flask, jsonify, render_template, request
-from validator import validate_admission_record, build_validation_summary, freshness_label, parse_ts
-from metrics import compute_turnover_delay, compute_experiment, is_safe_available
+from .validator import validate_admission_record, build_validation_summary, freshness_label, parse_ts
+from .metrics import compute_turnover_delay, compute_experiment, is_safe_available
 
 app = Flask(__name__)
 
@@ -88,7 +88,7 @@ def build_admission_view(adm_id, idx):
         if rt:
             elapsed_min = round((datetime.now().replace(microsecond=0) - rt).total_seconds() / 60)
             # Use prototype NOW
-            from metrics import NOW
+            from .metrics import NOW
             elapsed_min = round((NOW - rt).total_seconds() / 60)
 
     # Priority escalation
